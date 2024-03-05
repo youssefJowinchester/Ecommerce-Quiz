@@ -1,0 +1,47 @@
+<section class="container py-5">
+  <input
+    placeholder="Search...."
+    class="form-control w-50 mx-auto form-control-sm my-4"
+    type="text"
+    [(ngModel)]="term"
+  />
+
+  <div class="row g-4">
+    <div
+      *ngFor="let product of products | search : term"
+      class="col-ms-6 col-md-4 col-lg-3"
+    >
+      <div class="product h-100">
+        <header role="button" [routerLink]="['/productdetails', product._id]">
+          <img
+            class="w-100"
+            [src]="product.imageCover"
+            [title]="product.title"
+            [alt]="product.title"
+          />
+          <h3 class="h6">{{ product.title | cuttext : 3 }}</h3>
+          <h4 class="h6 text-main">{{ product.category.name }}</h4>
+          <div class="d-flex align-items-center justify-content-between">
+            <span class="small text-muted">{{
+              product.price | currency : "EGP"
+            }}</span>
+            <span class="small">
+              <i class="fas fa-star rating"></i>
+              {{ product.ratingsAverage }}
+            </span>
+          </div>
+        </header>
+
+        <footer>
+          <button
+            (click)="addpro(product._id, addbtn)"
+            #addbtn
+            class="main-btn"
+          >
+            + Add to cart
+          </button>
+        </footer>
+      </div>
+    </div>
+  </div>
+</section>

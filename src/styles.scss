@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import 'ngx-toastr/toastr';
+
+
+$main-color: #479647;
+$light-color: #f0f3f2;
+$shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+  rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+  rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+$font-family: "Noto Sans", sans-serif;
+$rating-color: #DAA520;
+$main-transition:0.8s;
+
+body {
+  font-family: $font-family !important;
+  font-size: 15px;
+}
+span{
+  font-family: $font-family !important;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.text-main{
+  color: $main-color;
+}
+.text-main-light{
+  color: $light-color;
+}
+.bg-main-light{
+  background-color: $light-color;
+}
+.bg-main{
+  background-color: $main-color;
+}
+.rating{
+  color: $rating-color;
+}
+.font-sm{
+  font-size: 10px;
+}
+.main-btn{
+  background-color: $main-color;
+  color: #fff;
+  border-radius: 5px;
+  border: unset;
+  cursor: pointer;
+  padding: 4px 8px;
+
+  &:disabled{
+    background-color: #078e076c;
+    color: #ffffff9c;
+    cursor: not-allowed;
+  }
+}
+.product{
+  border: 1px solid $main-color;
+  border-radius: 5px;
+  padding: 4px;
+  box-shadow: $shadow;
+}
+.active-link{
+  color: #fff !important;
+  background-color: $main-color;
+  border-radius: 5px !important;
+}
+.active-link:hover{
+  background-color: green !important;
+}
+
+.upbtn{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $main-color;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.changetext{
+  font-size: 20px;
+  border: unset;
+  background-color: transparent;
+}
+.changetext:hover{
+  color: $main-color;
+  transition: 0.5s;
+}
+.heart{
+  font-size: 25px;
+  z-index: 85445;
+  cursor: pointer;
+}

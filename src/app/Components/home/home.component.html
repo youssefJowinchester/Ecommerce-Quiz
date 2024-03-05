@@ -1,0 +1,93 @@
+<section class="py-5 container w-75 mx-auto">
+  <div class="row">
+    <div class="col-md-9">
+      <owl-carousel-o [options]="sliaddOptions">
+        <ng-template carouselSlide
+          ><img height="400" src="./assets/image/s1.jpg" alt="s1"
+        /></ng-template>
+        <ng-template carouselSlide
+          ><img height="400" src="./assets/image/s2.jpg" alt="s2"
+        /></ng-template>
+        <ng-template carouselSlide
+          ><img height="400" src="./assets/image/s3.jpg" alt="s3"
+        /></ng-template>
+      </owl-carousel-o>
+    </div>
+    <div class="col-md-3">
+      <img class="w-100" src="./assets/image/ss04.jpg" alt="ss04" />
+      <img class="w-100" src="./assets/image/ss05.jpg" alt="ss05" />
+    </div>
+  </div>
+</section>
+
+<!-- all category -->
+<section class="py-5">
+  <owl-carousel-o [options]="categoryOptions">
+    <ng-container *ngFor="let category of categories">
+      <ng-template carouselSlide>
+        <img
+          height="300"
+          [src]="category.image"
+          [alt]="category.name"
+          [title]="category.name"
+        />
+        <h3 class="h6 text-main">{{ category.name }}</h3>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</section>
+
+<!-- all product -->
+
+<section class="container py-5">
+  <div class="row g-4">
+    <div *ngFor="let product of products" class="col-ms-6 col-md-4 col-lg-3">
+      <div class="product h-100">
+        <header role="button" [routerLink]="['/productdetails', product._id]">
+          <img
+            class="w-100"
+            [src]="product.imageCover"
+            [title]="product.title"
+            [alt]="product.title"
+          />
+          <h3 class="h6">{{ product.title | cuttext : 3 }}</h3>
+          <h4 class="h6 text-main">{{ product.category.name }}</h4>
+          <div class="d-flex align-items-center justify-content-between">
+            <span class="small text-muted">{{
+              product.price | currency : "EGP"
+            }}</span>
+            <span class="small">
+              <i class="fas fa-star rating"></i>
+              {{ product.ratingsAverage }}
+            </span>
+          </div>
+        </header>
+
+        <footer class="d-flex justify-content-between">
+          <div>
+            <button
+              (click)="addpro(product._id, addbtn)"
+              #addbtn
+              class="main-btn"
+            >
+              + Add to cart
+            </button>
+          </div>
+          <div>
+            <i
+              *ngIf="!wishListData.includes($any(product._id))"
+              (click)="addFav(product._id)"
+              class="fa-regular fa-heart heart"
+            ></i>
+            <i
+            *ngIf="wishListData.includes($any(product._id))"
+              (click)="removfav(product._id)"
+              class="fa-solid fa-heart heart"
+              style="color: #eb0000"
+            ></i>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+</section>

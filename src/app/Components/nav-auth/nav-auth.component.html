@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" routerLink="">
+      <i class="fa-solid fa-cart-shopping fa-xl" style="color: #099207"
+        ><span class="text-black ps-1">fresh cart</span>
+      </i>
+    </a>
+    <button
+      class="navbar-toggler d-lg-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+        <li>
+          <a
+            routerLink="/register"
+            routerLinkActive="active-link"
+            class="text-decoration-none btn"
+            >register
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/login"
+            routerLinkActive="active-link"
+            class="text-decoration-none btn"
+            >log in</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

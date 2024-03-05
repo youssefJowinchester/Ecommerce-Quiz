@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" routerLink="">
+      <i class="fa-solid fa-cart-shopping fa-xl" style="color: #099207"
+        ><span class="text-black ps-1">fresh cart</span>
+      </i>
+    </a>
+    <button
+      class="navbar-toggler d-lg-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav m-auto mt-2 mt-lg-0 ps-5">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active-link" routerLink="/home"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active-link" routerLink="/cart"
+            >cart</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active-link"
+            routerLink="/wishlist"
+            >Wish list</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active-link"
+            routerLink="/products"
+            >products</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active-link"
+            routerLink="/categories"
+            >categories</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active-link"
+            routerLink="/brands"
+            >brands</a
+          >
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+        <li class="nav-item pt-2">
+          <a routerLink="/cart" class="position-relative nav-link">
+            <i
+              class="fa-solid fa-cart-shopping fa-2xl hav"
+              style="color: #3f3737"
+            ></i>
+            <span class="badge bg-success position-absolute top-0 end-0">{{
+              cartNum
+            }}</span>
+          </a>
+        </li>
+        <li>
+          <button (click)="logout()" class="btn btn-close-white">
+            log out
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
